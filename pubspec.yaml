@@ -39,6 +39,9 @@ dependencies:
   google_sign_in: ^5.4.1
   cloud_firestore: ^3.4.6
   date_time_format: ^2.0.1
+  google_fonts: ^3.0.1
+  flutter_signin_button: ^2.0.0
+  flutter_launcher_icons: ^0.10.0
 
 
 dev_dependencies:

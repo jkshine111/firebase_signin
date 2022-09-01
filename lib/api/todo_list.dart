@@ -2,9 +2,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_signin/api/updateUserForm.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
 import '../screens/signin_screen.dart';
+import '../utils/color_utils.dart';
 
 class MyHomePage extends StatefulWidget {
   // const MyHomePage(
@@ -76,11 +78,36 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    // var barColor2 = Color(0xff753a88);
+    // final style = TextStyle(fontSize: 25, fontStyle: FontStyle.italic);
+    // final style = TextStyle(fontSize: 25, fontWeight: FontWeight.bold);
+    final style = TextStyle(fontSize: 25);
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
         // My Todo List
         // title: Text(widget.title),
-        title: Text('My Todo List'),
+        title: Center(
+          child: Text(
+            'My Todo List',
+            textAlign: TextAlign.center,
+            style: GoogleFonts.pacifico(textStyle: style),
+            // style: GoogleFonts.sourceSerifPro(textStyle: style),
+            // style: GoogleFonts.libreBaskerville(textStyle: style),
+            // style: GoogleFonts.lora(textStyle: style),
+            // style: GoogleFonts.arsenal(textStyle: style),
+            // style: TextStyle(
+            //   fontSize: 23,
+            //   fontStyle: FontStyle.italic,
+            // ),
+            // style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+        ),
+        // backgroundColor: Colors.lightBlue,
+        // backgroundColor: barColor2,
+        automaticallyImplyLeading: false,
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.logout_outlined),
@@ -96,86 +123,116 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
-      body: StreamBuilder<QuerySnapshot>(
-        stream: FirebaseFirestore.instance.collection("TodoList").snapshots(),
-        builder: (context, snapshot) {
-          if (snapshot.hasError) {
-            return Text('Something went wrong');
-          } else if (snapshot.hasData || snapshot.data != null) {
-            return ListView.builder(
-                shrinkWrap: true,
-                itemCount: snapshot.data?.docs.length,
-                itemBuilder: (BuildContext context, int index) {
-                  QueryDocumentSnapshot<Object?>? documentSnapshot =
-                      snapshot.data?.docs[index];
-                  return Dismissible(
-                      key: Key(index.toString()),
-                      child: Card(
-                        elevation: 4,
-                        child: Column(
-                          children: [
-                            ListTile(
-                              title: Text((documentSnapshot != null)
-                                  ? (documentSnapshot["todoTitle"])
-                                  : ""),
-                              subtitle: Column(
+      body: SingleChildScrollView(
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+            colors: [
+              hexStringToColor("5E61F4"),
+              hexStringToColor("9546C4"),
+              hexStringToColor("9543C4"),
+              hexStringToColor("5E61F4"),
+              hexStringToColor("9546C4"),
+              hexStringToColor("CB2B93"),
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          )),
+          child: StreamBuilder<QuerySnapshot>(
+            stream:
+                FirebaseFirestore.instance.collection("TodoList").snapshots(),
+            builder: (context, snapshot) {
+              if (snapshot.hasError) {
+                return Text('Something went wrong');
+              } else if (snapshot.hasData || snapshot.data != null) {
+                return ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: snapshot.data?.docs.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      QueryDocumentSnapshot<Object?>? documentSnapshot =
+                          snapshot.data?.docs[index];
+                      return Dismissible(
+                          key: Key(index.toString()),
+                          child: Card(
+                            margin: EdgeInsets.all(5),
+                            elevation: 5,
+                            child: Container(
+                              child: Column(
                                 children: [
-                                  Text((documentSnapshot != null)
-                                      ? ((documentSnapshot["todoDesc"] != null)
-                                          ? documentSnapshot["todoDesc"]
-                                          : "")
-                                      : ""),
-                                  Text((documentSnapshot != null)
-                                      ? ((documentSnapshot["todoDate"] != null)
-                                          ? documentSnapshot["todoDate"]
-                                          : "")
-                                      : ""),
-                                ],
-                              ),
-                              trailing: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  IconButton(
-                                    icon: const Icon(Icons.edit),
-                                    color: Colors.blue,
-                                    onPressed: () {
-                                      Navigator.push(
-                                          context,
-                                          // google sign in
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  updateUserForm()));
-                                    },
-                                  ),
-                                  IconButton(
-                                    icon: const Icon(Icons.delete),
-                                    color: Colors.red,
-                                    onPressed: () {
-                                      setState(() {
-                                        deleteTodo((documentSnapshot != null)
-                                            ? (documentSnapshot["todoTitle"])
-                                            : "");
-                                        print('delete datas:');
-                                        print(documentSnapshot!["todoTitle"]);
-                                      });
-                                    },
+                                  ListTile(
+                                    title: Center(
+                                      child: Text((documentSnapshot != null)
+                                          ? (documentSnapshot["todoTitle"])
+                                          : ""),
+                                    ),
+                                    subtitle: Column(
+                                      children: [
+                                        Text((documentSnapshot != null)
+                                            ? ((documentSnapshot["todoDesc"] !=
+                                                    null)
+                                                ? documentSnapshot["todoDesc"]
+                                                : "")
+                                            : ""),
+                                        Text((documentSnapshot != null)
+                                            ? ((documentSnapshot["todoDate"] !=
+                                                    null)
+                                                ? documentSnapshot["todoDate"]
+                                                : "")
+                                            : ""),
+                                      ],
+                                    ),
+                                    trailing: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        IconButton(
+                                          icon: const Icon(Icons.edit),
+                                          color: Colors.blue,
+                                          onPressed: () {
+                                            Navigator.push(
+                                                context,
+                                                // google sign in
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        updateUserForm()));
+                                          },
+                                        ),
+                                        IconButton(
+                                          icon: const Icon(Icons.delete),
+                                          color: Colors.red,
+                                          onPressed: () {
+                                            setState(() {
+                                              deleteTodo(
+                                                  (documentSnapshot != null)
+                                                      ? (documentSnapshot[
+                                                          "todoTitle"])
+                                                      : "");
+                                              print('delete datas:');
+                                              print(documentSnapshot![
+                                                  "todoTitle"]);
+                                            });
+                                          },
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ],
                               ),
                             ),
-                          ],
-                        ),
-                      ));
-                });
-          }
-          return const Center(
-            child: CircularProgressIndicator(
-              valueColor: AlwaysStoppedAnimation<Color>(
-                Colors.red,
-              ),
-            ),
-          );
-        },
+                          ));
+                    });
+              }
+              return const Center(
+                child: CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(
+                    Colors.red,
+                  ),
+                ),
+              );
+            },
+          ),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -185,12 +242,17 @@ class _MyHomePageState extends State<MyHomePage> {
               builder: (BuildContext context) {
                 return AlertDialog(
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)),
-                  title: const Text("Add Todo"),
+                    borderRadius: BorderRadius.circular(40),
+                  ),
+                  title: Center(
+                    child: const Text("Add Todo"),
+                  ),
                   content: Container(
                     width: 500,
                     height: 200,
                     child: SingleChildScrollView(
+                      // scroll option disable
+                      // physics: NeverScrollableScrollPhysics(),
                       child: Column(
                         children: [
                           TextField(
@@ -198,7 +260,6 @@ class _MyHomePageState extends State<MyHomePage> {
                               title = value;
                             },
                             decoration: InputDecoration(
-                              hintText: 'Enter Title',
                               labelText: 'Title',
                             ),
                           ),
@@ -207,7 +268,6 @@ class _MyHomePageState extends State<MyHomePage> {
                               description = value;
                             },
                             decoration: InputDecoration(
-                              hintText: 'Enter Description',
                               labelText: 'Description',
                             ),
                           ),
@@ -218,7 +278,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               decoration: const InputDecoration(
                                 icon: Icon(Icons.calendar_today_rounded),
                                 // hintText: 'Enter Name',
-                                labelText: 'Select Date',
+                                labelText: 'Date',
                               ),
                               onTap: () async {
                                 print('date_is:$_date');

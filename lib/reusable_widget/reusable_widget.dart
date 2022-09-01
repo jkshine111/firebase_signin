@@ -38,7 +38,7 @@ Container signInSignUpButton(
         onTap();
       },
       child: Text(
-        isLogin ? 'Log IN' : 'SIGN UP',
+        isLogin ? 'LOGIN' : 'SIGN UP',
         style: const TextStyle(
             color: Colors.black87, fontWeight: FontWeight.bold, fontSize: 16),
       ),

@@ -1,5 +1,6 @@
 import 'package:firebase_signin/api/todo_list.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../reusable_widget/reusable_widget.dart';
 import '../utils/color_utils.dart';
 
@@ -27,9 +28,27 @@ class _updateUserFormState extends State<updateUserForm> {
 
   @override
   Widget build(BuildContext context) {
+    // var barColor2 = Color(0xff4568dc);
+    // var barColor2 = Color(0xff5b86e5);
+    // var barColor2 = Color(0xff667eea);
+    final style = TextStyle(fontSize: 25);
+    // final style = TextStyle(fontSize: 45, fontWeight: FontWeight.bold);
+
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: const Text('Update Todo Details'),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        // backgroundColor: barColor2,
+        title: Column(
+          children: [
+            Text(
+              'Update Todo List',
+              // style: GoogleFonts.tangerine(textStyle: style),
+              style: GoogleFonts.pacifico(textStyle: style),
+            ),
+          ],
+        ),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -54,25 +73,27 @@ class _updateUserFormState extends State<updateUserForm> {
           child: Column(
             children: [
               const SizedBox(
-                height: 20.0,
+                height: 100.0,
               ),
               reusableTextField(
-                  "Enter Title", Icons.title_outlined, false, _titleController),
+                  "Title", Icons.title_outlined, false, _titleController),
               const SizedBox(
                 height: 20.0,
               ),
-              reusableTextField("Enter Description", Icons.description_outlined,
+              reusableTextField("Description", Icons.description_outlined,
                   false, _descriptionController),
               const SizedBox(
                 height: 20.0,
               ),
-              reusableTextField("Select Date", Icons.date_range_outlined, false,
-                  _dateController),
+              reusableTextField(
+                  "Date", Icons.date_range_outlined, false, _dateController),
               const SizedBox(
                 height: 20.0,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
+                  // MainAxisAlignment = MainAxisAlignment.spaceBetween,
                   TextButton(
                       onPressed: () {
                         print('Update Detailss');
@@ -88,8 +109,8 @@ class _updateUserFormState extends State<updateUserForm> {
                         ),
                         child: const Text(
                           "Update",
-                          style: TextStyle(
-                              fontSize: 18, color: Colors.yellowAccent),
+                          style:
+                              TextStyle(fontSize: 18, color: Colors.cyanAccent),
                         ),
                       )),
                   TextButton(
@@ -106,7 +127,7 @@ class _updateUserFormState extends State<updateUserForm> {
                                   borderRadius: BorderRadius.circular(25.0))),
                         ),
                         child: const Text(
-                          "Clear",
+                          "  Clear  ",
                           style:
                               TextStyle(fontSize: 18, color: Colors.cyanAccent),
                         ),
