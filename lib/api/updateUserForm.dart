@@ -4,20 +4,44 @@ import 'package:google_fonts/google_fonts.dart';
 import '../reusable_widget/reusable_widget.dart';
 import '../utils/color_utils.dart';
 
-class updateUserForm extends StatefulWidget {
-  // final MyHomePage show_details;
+class updateUserForm extends StatelessWidget {
+  String titleText, descriptionText, dateValue;
 
-  // const updateUserForm(this.show_details, {Key? key, required String title})
-  //     : super(key: key);
+  // updateUserForm(this.titleText, this.descriptionText,
+  //     this.dateValue); // final MyHomePage show_details;
+  //
 
-  @override
-  State<updateUserForm> createState() => _updateUserFormState();
-}
+  updateUserForm(
+      {Key? key,
+      required this.titleText,
+      required this.descriptionText,
+      required this.dateValue})
+      : super(key: key);
 
-class _updateUserFormState extends State<updateUserForm> {
-  TextEditingController _titleController = new TextEditingController();
-  TextEditingController _descriptionController = new TextEditingController();
-  TextEditingController _dateController = new TextEditingController();
+  // updateUserForm({Key? key, required String title}) : super(key: key);
+
+  // const updateUserForm(this.show_details, {Key? key, required String title}) : super(key: key);
+  // String title;
+  //
+  // updateUserForm(this.title);
+
+//   @override
+//   State<updateUserForm> createState() => _updateUserFormState();
+// }
+//
+// class _updateUserFormState extends State<updateUserForm> {
+
+  // var titleText = 'Task';
+  // TextEditingController _titleController = new TextEditingController();
+  // TextEditingController _descriptionController = new TextEditingController();
+  // TextEditingController _dateController = new TextEditingController();
+
+  bool _validateTitle = false;
+  bool _validateDescription = false;
+  bool _validateDate = false;
+  //
+  // updateUserForm(
+  //     this._titleController, this._descriptionController, this._dateController);
 
   // @override
   // void initState() {
@@ -75,18 +99,83 @@ class _updateUserFormState extends State<updateUserForm> {
               const SizedBox(
                 height: 100.0,
               ),
-              reusableTextField(
-                  "Title", Icons.title_outlined, false, _titleController),
+              TextField(
+                  // controller: _titleController,
+                  style: TextStyle(color: Colors.white.withOpacity(0.9)),
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(
+                      Icons.title_outlined,
+                      color: Colors.white70,
+                    ),
+                    labelText: titleText,
+                    // labelText: 'Title',
+                    labelStyle:
+                        TextStyle(color: Colors.white70.withOpacity(0.9)),
+                    filled: true,
+                    floatingLabelBehavior: FloatingLabelBehavior.never,
+                    fillColor: Colors.white.withOpacity(0.3),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                        borderSide: const BorderSide(
+                            width: 0, style: BorderStyle.none)),
+                    errorText:
+                        _validateTitle ? 'Title Value Can\'t Be Empty' : null,
+                  )),
+              // reusableTextField(
+              //     "Title", Icons.title_outlined, false, _titleController),
               const SizedBox(
                 height: 20.0,
               ),
-              reusableTextField("Description", Icons.description_outlined,
-                  false, _descriptionController),
+              TextField(
+                  // controller: _descriptionController,
+                  style: TextStyle(color: Colors.white.withOpacity(0.9)),
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(
+                      Icons.description_outlined,
+                      color: Colors.white70,
+                    ),
+                    labelText: descriptionText,
+                    labelStyle:
+                        TextStyle(color: Colors.white70.withOpacity(0.9)),
+                    filled: true,
+                    floatingLabelBehavior: FloatingLabelBehavior.never,
+                    fillColor: Colors.white.withOpacity(0.3),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                        borderSide: const BorderSide(
+                            width: 0, style: BorderStyle.none)),
+                    errorText: _validateDescription
+                        ? 'Description Value Can\'t Be Empty'
+                        : null,
+                  )),
+              // reusableTextField("Description", Icons.description_outlined,
+              //     false, _descriptionController),
               const SizedBox(
                 height: 20.0,
               ),
-              reusableTextField(
-                  "Date", Icons.date_range_outlined, false, _dateController),
+              TextField(
+                  // controller: _dateController,
+                  style: TextStyle(color: Colors.white.withOpacity(0.9)),
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(
+                      Icons.date_range_outlined,
+                      color: Colors.white70,
+                    ),
+                    labelText: dateValue,
+                    labelStyle:
+                        TextStyle(color: Colors.white70.withOpacity(0.9)),
+                    filled: true,
+                    floatingLabelBehavior: FloatingLabelBehavior.never,
+                    fillColor: Colors.white.withOpacity(0.3),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                        borderSide: const BorderSide(
+                            width: 0, style: BorderStyle.none)),
+                    errorText:
+                        _validateDate ? 'Date Value Can\'t Be Empty' : null,
+                  )),
+              // reusableTextField(
+              //     "Date", Icons.date_range_outlined, false, _dateController),
               const SizedBox(
                 height: 20.0,
               ),
@@ -109,8 +198,7 @@ class _updateUserFormState extends State<updateUserForm> {
                         ),
                         child: const Text(
                           "Update",
-                          style:
-                              TextStyle(fontSize: 18, color: Colors.cyanAccent),
+                          style: TextStyle(fontSize: 18, color: Colors.white70),
                         ),
                       )),
                   TextButton(
@@ -128,8 +216,7 @@ class _updateUserFormState extends State<updateUserForm> {
                         ),
                         child: const Text(
                           "  Clear  ",
-                          style:
-                              TextStyle(fontSize: 18, color: Colors.cyanAccent),
+                          style: TextStyle(fontSize: 18, color: Colors.white70),
                         ),
                       )),
                 ],

@@ -33,6 +33,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
   TextEditingController _date = TextEditingController();
 
+  TextEditingController _titleController = TextEditingController();
+  TextEditingController _descriptionController = TextEditingController();
+  TextEditingController _dateController = TextEditingController();
+
+  // TextEditingController _titleController = new TextEditingController();
+  // TextEditingController _descriptionController = new TextEditingController();
+  // TextEditingController _dateController = new TextEditingController();
+
+  // TextEditingController _titleController = new TextEditingController();
+  // TextEditingController _descriptionController = new TextEditingController();
+  // TextEditingController _dateController = new TextEditingController();
+
   @override
   void initState() {
     super.initState();
@@ -190,12 +202,29 @@ class _MyHomePageState extends State<MyHomePage> {
                                           icon: const Icon(Icons.edit),
                                           color: Colors.blue,
                                           onPressed: () {
-                                            Navigator.push(
-                                                context,
-                                                // google sign in
+                                            Navigator.of(context).push(
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        updateUserForm()));
+                                                        updateUserForm(
+                                                            titleText:
+                                                                documentSnapshot![
+                                                                    "todoTitle"],
+                                                            descriptionText:
+                                                                documentSnapshot[
+                                                                    "todoDesc"],
+                                                            dateValue:
+                                                                documentSnapshot[
+                                                                    "todoDate"])));
+                                            // Navigator.of(context).push(
+                                            //     MaterialPageRoute(
+                                            //         builder: (context) =>
+                                            //             updateUserForm()));
+                                            // Navigator.push(
+                                            //     context,
+                                            //     // google sign in
+                                            //     MaterialPageRoute(
+                                            //         builder: (context) =>
+                                            //             updateUserForm()));
                                           },
                                         ),
                                         IconButton(

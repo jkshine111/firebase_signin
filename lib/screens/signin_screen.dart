@@ -61,6 +61,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 Text(
                   'Todo App',
                   style: GoogleFonts.pacifico(textStyle: style),
+                  // style: GoogleFonts.pacifico(textStyle: style),
                   // style: TextStyle(
                   //     fontSize: 25,
                   //     fontWeight: FontWeight.bold,
@@ -105,7 +106,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 ),
                 SignInButton(
                   // Buttons.Google,
-                  Buttons.GoogleDark,
+                  Buttons.Google,
                   text: "Sign up with Google",
                   onPressed: () {
                     print('Google Button');
