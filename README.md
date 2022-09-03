@@ -7,8 +7,7 @@ own to-do list app, so, here it is. It's very simple, but it helped me to unders
 
   <h1>Features</h1>
 
-- Users can create their own tasks by clicking on the '+' buttons.
-- You can mark a task as done by cliking on it (check it).
+- Users can create their own tasks by clicking on the '+' icon.
 - When creating a task you may choose to add a deadline, including only a date.
 - You can edit tasks by clicking on the pen icon.
 - You can delete a task by delete icon.
