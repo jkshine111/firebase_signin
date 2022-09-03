@@ -7,6 +7,8 @@ own to-do list app, so, here it is. It's very simple, but it helped me to unders
 
   <h1>Features</h1>
 
+- Login/SignUp with Firebase.
+- Login/SignUp with Google Account.
 - Users can create their own tasks by clicking on the <img src="Icons/add.png" width="25" height="25"/> add icon.
 - When creating a task you may choose to add a deadline, including only a <img src="Icons/date.png" width="25" height="25"/> date.
 - You can edit tasks by clicking on the <img src="Icons/edit.png" width="25" height="25"/> pen icon.
@@ -23,38 +25,36 @@ own to-do list app, so, here it is. It's very simple, but it helped me to unders
 [comment]: <> (<b>Login</b>)
 
 <br>
-<img src="Screenshots/Firebase SignIn Screenshots/1.png" width="360" height="640"/>
+<img src="Screenshots/Firebase SignIn Screenshots/1.png" width="300" height="300"/> <img src="Screenshots/Firebase SignIn Screenshots/2.png" width="300" height="300"/>
 <br>
-<img src="Screenshots/Firebase SignIn Screenshots/2.png" width="360" height="640"/>
+<img src="Screenshots/Firebase SignIn Screenshots/3.png" width="300" height="300"/>
 <br>
-<img src="Screenshots/Firebase SignIn Screenshots/3.png" width="360" height="640"/>
+<img src="Screenshots/Firebase SignIn Screenshots/4.png" width="300" height="300"/>
 <br>
-<img src="Screenshots/Firebase SignIn Screenshots/4.png" width="360" height="640"/>
+<img src="Screenshots/Firebase SignIn Screenshots/5.png" width="300" height="300"/>
 <br>
-<img src="Screenshots/Firebase SignIn Screenshots/5.png" width="360" height="640"/>
+<img src="Screenshots/Firebase SignIn Screenshots/6.png" width="300" height="300"/>
 <br>
-<img src="Screenshots/Firebase SignIn Screenshots/6.png" width="360" height="640"/>
+<img src="Screenshots/Firebase SignIn Screenshots/7.png" width="300" height="300"/>
 <br>
-<img src="Screenshots/Firebase SignIn Screenshots/7.png" width="360" height="640"/>
-<br>
-<img src="Screenshots/Firebase SignIn Screenshots/8.png" width="360" height="640"/>
+<img src="Screenshots/Firebase SignIn Screenshots/8.png" width="300" height="300"/>
 <br>
 <br>
 
    <h1>Google Signin Screenshots</h1>
 
 <br>
-<img src="Screenshots/Google SignIn Screenshots/1.png" width="360" height="640"/>
-<img src="Screenshots/Google SignIn Screenshots/2.png" width="360" height="640"/>
+<img src="Screenshots/Google SignIn Screenshots/1.png" width="300" height="300"/>
+<img src="Screenshots/Google SignIn Screenshots/2.png" width="300" height="300"/>
 <br>
-<img src="Screenshots/Google SignIn Screenshots/3.png" width="360" height="640"/>
+<img src="Screenshots/Google SignIn Screenshots/3.png" width="300" height="300"/>
 <br>
-<img src="Screenshots/Google SignIn Screenshots/4.png" width="360" height="640"/>
+<img src="Screenshots/Google SignIn Screenshots/4.png" width="300" height="300"/>
 <br>
-<img src="Screenshots/Google SignIn Screenshots/5.png" width="360" height="640"/>
+<img src="Screenshots/Google SignIn Screenshots/5.png" width="300" height="300"/>
 <br>
-<img src="Screenshots/Google SignIn Screenshots/6.png" width="360" height="640"/>
+<img src="Screenshots/Google SignIn Screenshots/6.png" width="300" height="300"/>
 <br>
-<img src="Screenshots/Google SignIn Screenshots/7.png" width="360" height="640"/>
+<img src="Screenshots/Google SignIn Screenshots/7.png" width="300" height="300"/>
 <br>
 <br>
