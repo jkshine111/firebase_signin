@@ -1,11 +1,14 @@
 # To-Do List
 
+- An App To manage all your tasks with firebase backend.
+- Star⭐ the repository if you like what you seewink.
+
  <h1>Introduction</h1>
 
 I've always used to-do lists, and since I didn't knew what to do as my first independent Dart/Flutter project, I've chosen to create my
 own to-do list app, so, here it is. It's very simple, but it helped me to understand and put into practice a lot of things, that before this project, I've had only learned thorugh theory or coding along with courses.
 
-  <h1>Features</h1>
+  <h1>✨Features</h1>
 
 - Login/SignUp with Firebase.
 - Login/SignUp with Google Account.
