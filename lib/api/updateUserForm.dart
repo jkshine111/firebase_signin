@@ -1,7 +1,5 @@
-import 'package:firebase_signin/api/todo_list.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../reusable_widget/reusable_widget.dart';
 import '../utils/color_utils.dart';
 
 class updateUserForm extends StatelessWidget {
@@ -33,13 +31,16 @@ class updateUserForm extends StatelessWidget {
 
   // var titleText = 'Task';
 
-  TextEditingController _titleController = new TextEditingController();
-  TextEditingController _descriptionController = new TextEditingController();
-  TextEditingController _dateController = new TextEditingController();
+  // final CollectionReference _update_val =
+  //     FirebaseFirestore.instance.collection('TodoList');
 
-  bool _validateTitle = false;
-  bool _validateDescription = false;
-  bool _validateDate = false;
+  // TextEditingController _titleController = new TextEditingController();
+  // TextEditingController _descriptionController = new TextEditingController();
+  // TextEditingController _dateController = new TextEditingController();
+
+  final bool _validateTitle = false;
+  final bool _validateDescription = false;
+  final bool _validateDate = false;
   //
   // updateUserForm(
   //     this._titleController, this._descriptionController, this._dateController);
@@ -53,9 +54,9 @@ class updateUserForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('Received_Title_is:${titleText}');
-    print('Received_Description_is:${descriptionText}');
-    print('Received_Date_is:${dateValue}');
+    print('Received_Title_is:$titleText');
+    print('Received_Description_is:$descriptionText');
+    print('Received_Date_is:$dateValue');
     // var barColor2 = Color(0xff4568dc);
     // var barColor2 = Color(0xff5b86e5);
     // var barColor2 = Color(0xff667eea);
@@ -90,9 +91,6 @@ class updateUserForm extends StatelessWidget {
               hexStringToColor("9546C4"),
               hexStringToColor("5E61F4"),
               hexStringToColor("9546C4"),
-              // hexStringToColor("CB2B93"),
-              // hexStringToColor("9546C4"),
-              // hexStringToColor("5E61F4")
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -107,7 +105,7 @@ class updateUserForm extends StatelessWidget {
                   // controller: _titleController,
                   style: TextStyle(color: Colors.white.withOpacity(0.9)),
                   decoration: InputDecoration(
-                    prefixIcon: Icon(
+                    prefixIcon: const Icon(
                       Icons.title_outlined,
                       color: Colors.white70,
                     ),
@@ -137,7 +135,7 @@ class updateUserForm extends StatelessWidget {
                   // },
                   style: TextStyle(color: Colors.white.withOpacity(0.9)),
                   decoration: InputDecoration(
-                    prefixIcon: Icon(
+                    prefixIcon: const Icon(
                       Icons.description_outlined,
                       color: Colors.white70,
                     ),
@@ -164,7 +162,7 @@ class updateUserForm extends StatelessWidget {
                   // controller: _dateController,
                   style: TextStyle(color: Colors.white.withOpacity(0.9)),
                   decoration: InputDecoration(
-                    prefixIcon: Icon(
+                    prefixIcon: const Icon(
                       Icons.date_range_outlined,
                       color: Colors.white70,
                     ),

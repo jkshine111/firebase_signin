@@ -23,19 +23,21 @@ class MyHomePage extends StatefulWidget {
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 
-  updateList(String title, String description, String date) {}
+  // updateList(String title, String description, String date) {}
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List todos = List.empty();
   String title = "";
   String description = "";
+  // String date = "";
 
+  // TextEditingController _title = TextEditingController();
+  // TextEditingController _description = TextEditingController();
   TextEditingController _date = TextEditingController();
 
-  TextEditingController _titleController = TextEditingController();
-  TextEditingController _descriptionController = TextEditingController();
-  TextEditingController _dateController = TextEditingController();
+  // TextEditingController _titleController = TextEditingController();
+  // TextEditingController _descriptionController = TextEditingController();
+  // TextEditingController _dateController = TextEditingController();
 
   // TextEditingController _titleController = new TextEditingController();
   // TextEditingController _descriptionController = new TextEditingController();
@@ -44,12 +46,6 @@ class _MyHomePageState extends State<MyHomePage> {
   // TextEditingController _titleController = new TextEditingController();
   // TextEditingController _descriptionController = new TextEditingController();
   // TextEditingController _dateController = new TextEditingController();
-
-  @override
-  void initState() {
-    super.initState();
-    todos = ["Hello", "Hey There"];
-  }
 
   createToDo() {
     DocumentReference documentReference =
@@ -84,22 +80,13 @@ class _MyHomePageState extends State<MyHomePage> {
     // print(item);
   }
 
-  CollectionReference TodoList =
-      FirebaseFirestore.instance.collection('TodoList');
-
-  Future<void> updateList(id, title, description, _date) {
-    return TodoList.doc(id)
-        .update(
-            {'todoTitle': title, 'todoDesc': description, 'todoDate': _date})
-        .then((value) => print("List Updated"))
-        .catchError((error) => print("Failed to update List: $error"));
-  }
+  // final CollectionReference _update_val =
+  //     FirebaseFirestore.instance.collection('TodoList');
 
   @override
   Widget build(BuildContext context) {
     // var barColor2 = Color(0xff753a88);
-    // final style = TextStyle(fontSize: 25, fontStyle: FontStyle.italic);
-    // final style = TextStyle(fontSize: 25, fontWeight: FontWeight.bold);
+
     final style = TextStyle(fontSize: 25);
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -113,19 +100,8 @@ class _MyHomePageState extends State<MyHomePage> {
             'My Todo List',
             textAlign: TextAlign.center,
             style: GoogleFonts.pacifico(textStyle: style),
-            // style: GoogleFonts.sourceSerifPro(textStyle: style),
-            // style: GoogleFonts.libreBaskerville(textStyle: style),
-            // style: GoogleFonts.lora(textStyle: style),
-            // style: GoogleFonts.arsenal(textStyle: style),
-            // style: TextStyle(
-            //   fontSize: 23,
-            //   fontStyle: FontStyle.italic,
-            // ),
-            // style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
         ),
-        // backgroundColor: Colors.lightBlue,
-        // backgroundColor: barColor2,
         automaticallyImplyLeading: false,
         actions: <Widget>[
           IconButton(
@@ -230,16 +206,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                                             dateValue:
                                                                 documentSnapshot[
                                                                     "todoDate"])));
-                                            // Navigator.of(context).push(
-                                            //     MaterialPageRoute(
-                                            //         builder: (context) =>
-                                            //             updateUserForm()));
-                                            // Navigator.push(
-                                            //     context,
-                                            //     // google sign in
-                                            //     MaterialPageRoute(
-                                            //         builder: (context) =>
-                                            //             updateUserForm()));
                                           },
                                         ),
                                         IconButton(
