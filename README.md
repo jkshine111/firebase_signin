@@ -27,9 +27,10 @@ own to-do list app, so, here it is. It's very simple, but it helped me to unders
 
 ## 📸 Screenshots :
 
-<img src="Screenshots/Firebase SignIn Screenshots/1.png" width="300" height="580"/> &nbsp;&nbsp;&nbsp; <img src="Screenshots/Firebase SignIn Screenshots/2.png" width="300" height="580"/> <img src="Screenshots/Firebase SignIn Screenshots/3.png" width="300" height="580"/>
+<img src="Screenshots/Firebase SignIn Screenshots/1.png" width="300" height="580"/> &nbsp;&nbsp;&nbsp; <img src="Screenshots/Firebase SignIn Screenshots/2.png" width="300" height="580"/>
 <br>
-<img src="Screenshots/Firebase SignIn Screenshots/4.png" width="300" height="580"/>
+<br>
+<img src="Screenshots/Firebase SignIn Screenshots/3.png" width="300" height="580"/> &nbsp;&nbsp;&nbsp; <img src="Screenshots/Firebase SignIn Screenshots/4.png" width="300" height="580"/>
 <br>
 <br>
 <img src="Screenshots/Firebase SignIn Screenshots/5.png" width="300" height="580"/> &nbsp;&nbsp;&nbsp; <img src="Screenshots/Firebase SignIn Screenshots/6.png" width="300" height="580"/>
