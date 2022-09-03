@@ -24,10 +24,10 @@ own to-do list app, so, here it is. It's very simple, but it helped me to unders
 
 ## 📸 Screenshots :
 
-<img src="Screenshots/Firebase SignIn Screenshots/1.png" width="360" height="640"/> <br> <img src="Screenshots/Firebase SignIn Screenshots/2.png" width="360" height="640"/>
+<img src="Screenshots/Firebase SignIn Screenshots/1.png" width="360" height="640"/> <img src="Screenshots/Firebase SignIn Screenshots/2.png" width="360" height="640"/>
 <br>
 <br>
-<img src="Screenshots/Firebase SignIn Screenshots/3.png" width="360" height="640"/> <br> <img src="Screenshots/Firebase SignIn Screenshots/4.png" width="360" height="640"/>
+<img src="Screenshots/Firebase SignIn Screenshots/3.png" width="360" height="640"/> <img src="Screenshots/Firebase SignIn Screenshots/4.png" width="360" height="640"/>
 <br>
 <br>
 <img src="Screenshots/Firebase SignIn Screenshots/5.png" width="360" height="640"/> <img src="Screenshots/Firebase SignIn Screenshots/6.png" width="360" height="640"/>
@@ -40,16 +40,11 @@ own to-do list app, so, here it is. It's very simple, but it helped me to unders
    <h1>Google Signin Screenshots</h1>
 
 <br>
-<img src="Screenshots/Google SignIn Screenshots/1.png" width="360" height="640"/>
-<img src="Screenshots/Google SignIn Screenshots/2.png" width="360" height="640"/>
+<img src="Screenshots/Google SignIn Screenshots/1.png" width="360" height="640"/> <img src="Screenshots/Google SignIn Screenshots/2.png" width="360" height="640"/>
 <br>
-<img src="Screenshots/Google SignIn Screenshots/3.png" width="360" height="640"/>
+<img src="Screenshots/Google SignIn Screenshots/3.png" width="360" height="640"/> <img src="Screenshots/Google SignIn Screenshots/4.png" width="360" height="640"/>
 <br>
-<img src="Screenshots/Google SignIn Screenshots/4.png" width="360" height="640"/>
-<br>
-<img src="Screenshots/Google SignIn Screenshots/5.png" width="360" height="640"/>
-<br>
-<img src="Screenshots/Google SignIn Screenshots/6.png" width="360" height="640"/>
+<img src="Screenshots/Google SignIn Screenshots/5.png" width="360" height="640"/> <img src="Screenshots/Google SignIn Screenshots/6.png" width="360" height="640"/>
 <br>
 <img src="Screenshots/Google SignIn Screenshots/7.png" width="360" height="640"/>
 <br>
