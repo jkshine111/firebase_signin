@@ -52,6 +52,9 @@ class updateUserForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('Received_Title_is:${titleText}');
+    print('Received_Description_is:${descriptionText}');
+    print('Received_Date_is:${dateValue}');
     // var barColor2 = Color(0xff4568dc);
     // var barColor2 = Color(0xff5b86e5);
     // var barColor2 = Color(0xff667eea);
@@ -128,6 +131,9 @@ class updateUserForm extends StatelessWidget {
               ),
               TextField(
                   // controller: _descriptionController,
+                  // onTap: () {
+                  //   print('titleText_is:${titleText}');
+                  // },
                   style: TextStyle(color: Colors.white.withOpacity(0.9)),
                   decoration: InputDecoration(
                     prefixIcon: Icon(

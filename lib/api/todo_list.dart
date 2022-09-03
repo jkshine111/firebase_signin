@@ -65,6 +65,23 @@ class _MyHomePageState extends State<MyHomePage> {
     documentReference
         .set(todoList)
         .whenComplete(() => print("Data stored successfully $todoList"));
+
+    print('Title_is:');
+    print(todoList["todoTitle"]);
+    print(todoList["todoDesc"]);
+    print(todoList["todoDate"]);
+
+    // var key = todoList.keys.firstWhere((k) => todoList[k] == 'todoTitle');
+    // print('Title is:' + key);
+
+    // final String search;
+    //
+    // final selected = todoList.keys.firstWhere((key) {
+    //   return todoList[key]!.contains(search);
+    // });
+
+    // print(selected);
+    // print("Title is: $todoList");
     // I/flutter ( 4869): Data stored successfully {todoTitle: Iphone, todoDesc: this iPhone is 85000}
   }
 
@@ -202,12 +219,20 @@ class _MyHomePageState extends State<MyHomePage> {
                                           icon: const Icon(Icons.edit),
                                           color: Colors.blue,
                                           onPressed: () {
+                                            print(
+                                                'Send_the_Title_is:${documentSnapshot!["todoTitle"]}');
+                                            print(
+                                                'Send_the_Description_is:${documentSnapshot["todoDesc"]}');
+                                            print(
+                                                'Send_the_Date_is:${documentSnapshot["todoDate"]}');
+
                                             Navigator.of(context).push(
                                                 MaterialPageRoute(
                                                     builder: (context) =>
                                                         updateUserForm(
+                                                            // titleText: title,
                                                             titleText:
-                                                                documentSnapshot![
+                                                                documentSnapshot[
                                                                     "todoTitle"],
                                                             descriptionText:
                                                                 documentSnapshot[
