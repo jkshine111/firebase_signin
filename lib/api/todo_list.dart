@@ -70,19 +70,6 @@ class _MyHomePageState extends State<MyHomePage> {
     print(todoList["todoTitle"]);
     print(todoList["todoDesc"]);
     print(todoList["todoDate"]);
-
-    // var key = todoList.keys.firstWhere((k) => todoList[k] == 'todoTitle');
-    // print('Title is:' + key);
-
-    // final String search;
-    //
-    // final selected = todoList.keys.firstWhere((key) {
-    //   return todoList[key]!.contains(search);
-    // });
-
-    // print(selected);
-    // print("Title is: $todoList");
-    // I/flutter ( 4869): Data stored successfully {todoTitle: Iphone, todoDesc: this iPhone is 85000}
   }
 
   deleteTodo(item) {
@@ -92,6 +79,9 @@ class _MyHomePageState extends State<MyHomePage> {
     documentReference
         .delete()
         .whenComplete(() => print("deleted successfully"));
+
+    print('deleted_values_is:${item}');
+    // print(item);
   }
 
   CollectionReference TodoList =
@@ -312,6 +302,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           TextField(
                             onChanged: (String value) {
                               title = value;
+                              print('add_the_value:${value}');
                             },
                             decoration: InputDecoration(
                               labelText: 'Title',

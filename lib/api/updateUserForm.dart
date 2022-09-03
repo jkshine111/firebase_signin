@@ -32,9 +32,10 @@ class updateUserForm extends StatelessWidget {
 // class _updateUserFormState extends State<updateUserForm> {
 
   // var titleText = 'Task';
-  // TextEditingController _titleController = new TextEditingController();
-  // TextEditingController _descriptionController = new TextEditingController();
-  // TextEditingController _dateController = new TextEditingController();
+
+  TextEditingController _titleController = new TextEditingController();
+  TextEditingController _descriptionController = new TextEditingController();
+  TextEditingController _dateController = new TextEditingController();
 
   bool _validateTitle = false;
   bool _validateDescription = false;
@@ -191,7 +192,7 @@ class updateUserForm extends StatelessWidget {
                   // MainAxisAlignment = MainAxisAlignment.spaceBetween,
                   TextButton(
                       onPressed: () {
-                        print('Update Detailss');
+                        print('Update Text Button');
                       },
                       child: OutlinedButton(
                         onPressed: () {
