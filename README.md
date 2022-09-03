@@ -41,10 +41,11 @@ own to-do list app, so, here it is. It's very simple, but it helped me to unders
 <img src="Screenshots/Firebase SignIn Screenshots/8.png" width="360" height="640"/>
 <br>
 <br>
-<b>Google Signin Screenshots</b>
+
+   <h1>Google Signin Screenshots</h1>
+
 <br>
 <img src="Screenshots/Google SignIn Screenshots/1.png" width="360" height="640"/>
-<br>
 <img src="Screenshots/Google SignIn Screenshots/2.png" width="360" height="640"/>
 <br>
 <img src="Screenshots/Google SignIn Screenshots/3.png" width="360" height="640"/>
