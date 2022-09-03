@@ -56,3 +56,24 @@ own to-do list app, so, here it is. It's very simple, but it helped me to unders
 <img src="Screenshots/Google SignIn Screenshots/7.png" width="360" height="640"/>
 <br>
 <br>
+
+## How To Use
+
+To clone and run this application, you'll need [Git](https://git-scm.com) & [Flutter](https://docs.flutter.dev/get-started/install) and [Android Studio](https://developer.android.com/studio) installed on your computer. From your command line:
+
+```bash
+# Clone this repository
+$ git clone https://github.com/jkshine111/firebase_signin.git
+
+# Go into the repository
+$ cd firebase_signin
+
+# Install dependencies
+$ flutter packages get
+
+# Run the app
+$ flutter run
+```
+
+> GitHub [@jkshine111](https://github.com/jkshine111) &nbsp;&middot;&nbsp;
+> Instagram [@jayakumar20003](https://www.instagram.com/jayakumar20003)
