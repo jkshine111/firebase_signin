@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_signin/api/updateUserForm.dart';
+import 'package:firebase_signin/api/update_todo_page.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -23,7 +24,7 @@ class MyHomePage extends StatefulWidget {
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 
-  // updateList(String title, String description, String date) {}
+// updateList(String title, String description, String date) {}
 }
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -34,18 +35,6 @@ class _MyHomePageState extends State<MyHomePage> {
   // TextEditingController _title = TextEditingController();
   // TextEditingController _description = TextEditingController();
   TextEditingController _date = TextEditingController();
-
-  // TextEditingController _titleController = TextEditingController();
-  // TextEditingController _descriptionController = TextEditingController();
-  // TextEditingController _dateController = TextEditingController();
-
-  // TextEditingController _titleController = new TextEditingController();
-  // TextEditingController _descriptionController = new TextEditingController();
-  // TextEditingController _dateController = new TextEditingController();
-
-  // TextEditingController _titleController = new TextEditingController();
-  // TextEditingController _descriptionController = new TextEditingController();
-  // TextEditingController _dateController = new TextEditingController();
 
   createToDo() {
     DocumentReference documentReference =
@@ -67,6 +56,8 @@ class _MyHomePageState extends State<MyHomePage> {
     print(todoList["todoDesc"]);
     print(todoList["todoDate"]);
   }
+
+  // final reference_id = FirebaseFirestore.instance.collection("TodoList").id;
 
   deleteTodo(item) {
     DocumentReference documentReference =
@@ -191,7 +182,19 @@ class _MyHomePageState extends State<MyHomePage> {
                                                 'Send_the_Description_is:${documentSnapshot["todoDesc"]}');
                                             print(
                                                 'Send_the_Date_is:${documentSnapshot["todoDate"]}');
-
+                                            // UpdateTodoPage
+                                            // Navigator.of(context).push(
+                                            //     MaterialPageRoute(
+                                            //         builder: (context) =>
+                                            //             UpdateTodoPage(
+                                            //               id: FirebaseFirestore
+                                            //                   .instance
+                                            //                   .collection(
+                                            //                       "TodoList")
+                                            //                   .id,
+                                            //             )));
+                                            // final reference_id = FirebaseFirestore.instance.collection("TodoList").id;
+                                            // },
                                             Navigator.of(context).push(
                                                 MaterialPageRoute(
                                                     builder: (context) =>
@@ -325,6 +328,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             //todos.add(title);
                             createToDo();
                           });
+                          _date.clear();
                           Navigator.of(context).pop();
                         },
                         child: const Text("Add"))

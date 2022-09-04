@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../utils/color_utils.dart';
@@ -31,7 +30,7 @@ class updateUserForm extends StatelessWidget {
 // class _updateUserFormState extends State<updateUserForm> {
 
   // var titleText = 'Task';
-  //
+
   // final CollectionReference _update_val =
   //     FirebaseFirestore.instance.collection('TodoList');
 
@@ -43,15 +42,6 @@ class updateUserForm extends StatelessWidget {
   final bool _validateDescription = false;
   final bool _validateDate = false;
   //
-  // updateUserForm(
-  //     this._titleController, this._descriptionController, this._dateController);
-
-  // @override
-  // void initState() {
-  //   _titleController.text = widget.show_details.title;
-  //   _descriptionController.text = widget.show_details.description;
-  //   _dateController.text = widget.show_details.date;
-  // }
 
   @override
   Widget build(BuildContext context) {
