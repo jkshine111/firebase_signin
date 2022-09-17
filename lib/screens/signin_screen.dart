@@ -8,6 +8,7 @@ import 'package:flutter_signin_button/flutter_signin_button.dart';
 
 import '../api/todo_list.dart';
 import '../reusable_widget/reusable_widget.dart';
+import 'current_location_screen.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({Key? key}) : super(key: key);
@@ -37,7 +38,7 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     // final style = TextStyle(fontSize: 25);
-    final style = TextStyle(fontSize: 40, color: Colors.white70);
+    final style = TextStyle(fontSize: 50, color: Colors.white70);
 
     return Scaffold(
       body: Container(
@@ -58,22 +59,24 @@ class _SignInScreenState extends State<SignInScreen> {
                 SizedBox(
                   height: 55,
                 ),
-                Text(
-                  'Todo App',
-                  style: GoogleFonts.pacifico(textStyle: style),
-                  // style: GoogleFonts.pacifico(textStyle: style),
-                  // style: TextStyle(
-                  //     fontSize: 25,
-                  //     fontWeight: FontWeight.bold,
-                  //     color: Colors.white70),
-                ),
-                // Image(image: AssetImage('assets/images/logo.jpg')),
-
-                // Icon(
-                //   Icons.audiotrack,
-                //   color: Colors.green,
-                //   size: 100,
+                // Text(
+                //   'Map',
+                //   // 'Todo App',
+                //   style: GoogleFonts.pacifico(textStyle: style),
+                //   // ------------
+                //   // style: GoogleFonts.pacifico(textStyle: style),
+                //   // style: TextStyle(
+                //   //     fontSize: 25,
+                //   //     fontWeight: FontWeight.bold,
+                //   //     color: Colors.white70),
                 // ),
+                // Image(image: AssetImage('Icons/location.jpg')),
+
+                Icon(
+                  Icons.maps_ugc_rounded,
+                  color: Colors.black26,
+                  size: 100,
+                ),
                 SizedBox(
                   height: 30,
                 ),
@@ -95,8 +98,11 @@ class _SignInScreenState extends State<SignInScreen> {
                           password: _passwordTextController.text)
                       .then((value) {
                     // homescreen
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => MyHomePage()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => CurrentLocationScreen()));
+                    // MaterialPageRoute(builder: (context) => MyHomePage()));
                   }).onError((error, stackTrace) {
                     print("Error: ${error.toString()}");
                   });
@@ -257,7 +263,9 @@ class _HomeStateState extends State<_HomeState> {
                     Navigator.push(
                         context,
                         // Todo Page
-                        MaterialPageRoute(builder: (context) => MyHomePage()));
+                        // MaterialPageRoute(builder: (context) => MyHomePage()));
+                        MaterialPageRoute(
+                            builder: (context) => CurrentLocationScreen()));
                   },
                   style: ElevatedButton.styleFrom(
                     shape: new RoundedRectangleBorder(

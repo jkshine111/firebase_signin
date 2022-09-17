@@ -42,7 +42,12 @@ dependencies:
   google_fonts: ^3.0.1
   flutter_signin_button: ^2.0.0
   flutter_launcher_icons: ^0.10.0
-
+  google_maps_flutter: ^2.2.0
+  geolocator: ^9.0.1
+  flutter_google_places: ^0.3.0
+  location: ^4.4.0
+  permission_handler: ^10.0.0
+  flutter_image_map: ^0.9.3
 
 dev_dependencies:
   flutter_test:
