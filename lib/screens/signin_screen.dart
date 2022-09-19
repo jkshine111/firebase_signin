@@ -256,9 +256,9 @@ class _HomeStateState extends State<_HomeState> {
                     Navigator.push(
                         context,
                         // Todo Page
-                        // MaterialPageRoute(builder: (context) => MyHomePage()));
-                        MaterialPageRoute(
-                            builder: (context) => CurrentLocationScreen()));
+                        MaterialPageRoute(builder: (context) => MyHomePage()));
+                    // MaterialPageRoute(
+                    //     builder: (context) => CurrentLocationScreen()));
                   },
                   style: ElevatedButton.styleFrom(
                     shape: new RoundedRectangleBorder(

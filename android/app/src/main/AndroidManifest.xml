@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="Location"
+        android:label="Todo List"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:usesCleartextTraffic="True"
@@ -42,7 +42,7 @@
 
        <!-- added api key -->
        <meta-data android:name="com.google.android.geo.API_KEY"
-           android:value="XXX"/>
+           android:value="AIzaSyB9Td5zmEvS-c2IZ0WXvmcmh8YXk90zgOY"/>
 
    </application>
 </manifest>
