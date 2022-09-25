@@ -36,10 +36,27 @@ class _MyHomePageState extends State<MyHomePage> {
   // TextEditingController _description = TextEditingController();
   TextEditingController _date = TextEditingController();
 
+  // ------------------------------
+  // Add Record
+  // CollectionReference todoList =
+  //     FirebaseFirestore.instance.collection('TodoList');
+  //
+  // Future<void> addRecord() {
+  //   return todoList
+  //       .add({
+  //         'todoTitle': title,
+  //         'todoDesc': description,
+  //         'todoDate': _date.text
+  //       })
+  //       .then((value) => print('New Record Added'))
+  //       .catchError((error) => print('Failed to Add Record: $error'));
+  // }
+
+  // ----------------------------------------
   createToDo() {
     DocumentReference documentReference =
-        // FirebaseFirestore.instance.collection("MyTodos").doc(title);
         FirebaseFirestore.instance.collection("TodoList").doc(title);
+    // FirebaseFirestore.instance.collection("MyTodos").doc(title);
 
     Map<String, String> todoList = {
       "todoTitle": title,
@@ -57,6 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
     print(todoList["todoDate"]);
   }
 
+  //-------------------------------------
   // final reference_id = FirebaseFirestore.instance.collection("TodoList").id;
 
   deleteTodo(item) {
@@ -326,6 +344,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           print('new record added');
                           setState(() {
                             //todos.add(title);
+                            // addRecord();
                             createToDo();
                           });
                           _date.clear();

@@ -1,13 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../utils/color_utils.dart';
 
-class updateUserForm extends StatelessWidget {
-  String titleText, descriptionText, dateValue;
-
-  // updateUserForm(this.titleText, this.descriptionText,
-  //     this.dateValue); // final MyHomePage show_details;
-  //
+class updateUserForm extends StatefulWidget {
+  // late String titleText, descriptionText, dateValue;
 
   updateUserForm(
       {Key? key,
@@ -16,25 +13,52 @@ class updateUserForm extends StatelessWidget {
       required this.dateValue})
       : super(key: key);
 
-  // updateUserForm({Key? key, required String title}) : super(key: key);
+  final String titleText;
+  final String descriptionText;
+  final String dateValue;
 
-  // const updateUserForm(this.show_details, {Key? key, required String title}) : super(key: key);
-  // String title;
-  //
-  // updateUserForm(this.title);
+  @override
+  State<updateUserForm> createState() => _updateUserFormState(
+      titleText: titleText,
+      descriptionText: descriptionText,
+      dateValue: dateValue);
+}
 
-//   @override
-//   State<updateUserForm> createState() => _updateUserFormState();
-// }
-//
-// class _updateUserFormState extends State<updateUserForm> {
-
+class _updateUserFormState extends State<updateUserForm> {
   // var titleText = 'Task';
+
+  // String titleText, descriptionText, dateValue;/
+
+  _updateUserFormState(
+      {Key? key,
+      required this.titleText,
+      required this.descriptionText,
+      required this.dateValue});
+  // : super(key: key);
+
+  late final String titleText;
+  final String descriptionText;
+  final String dateValue;
 
   // final CollectionReference _update_val =
   //     FirebaseFirestore.instance.collection('TodoList');
 
   // TextEditingController _titleController = new TextEditingController();
+  TextEditingController _titleController = new TextEditingController();
+  TextEditingController _descriptionController = new TextEditingController();
+  TextEditingController _dateController = new TextEditingController();
+
+  // final List<String> titleText;
+
+  // TextEditingController textEditingController =
+  //     TextEditingController(text: titleText);
+
+  // TextEditingController _titleController = new TextEditingController();
+  // TextEditingController _titleController = TextEditingController(
+  // text: dataList[index].purpose);
+
+  // _purposeController = TextEditingController(
+  // text: dataList[index].purpose);
   // TextEditingController _descriptionController = new TextEditingController();
   // TextEditingController _dateController = new TextEditingController();
 
@@ -42,7 +66,73 @@ class updateUserForm extends StatelessWidget {
   final bool _validateDescription = false;
   final bool _validateDate = false;
   //
+  // var documentReference =
+  // FirebaseFirestore.instance.collection("TodoList");
+  //
 
+  // var reference_id = FirebaseFirestore.instance.collection('TodoList');
+  //
+  // // Updaing Record
+  // CollectionReference todoList =
+  //     FirebaseFirestore.instance.collection('TodoList');
+
+  // Future<void> updateval(id, titleText, descriptionText, dateValue) {
+  //   return todoList
+  //       .doc(id)
+  //       .update({
+  //         'todoTitle': _titleController.text,
+  //         'todoDesc': _descriptionController.text,
+  //         'todoDate': _dateController.text
+  //       })
+  //       .then((value) => print("Record Updated"))
+  //       .catchError((error) => print("Failed to update record: $error"));
+  // }
+
+  // ################## ---------------------------
+
+  updateToDo() {
+    // final documentReference =
+    // FirebaseFirestore.instance.collection("TodoList");
+
+    DocumentReference documentReference =
+        FirebaseFirestore.instance.collection("TodoList").doc(titleText);
+
+    // final reference_id = FirebaseFirestore.instance.collection("TodoList").id;
+
+    // .doc(_titleController.text);
+    // FirebaseFirestore.instance.collection("TodoList").doc(titleText);
+    // FirebaseFirestore.instance.collection("MyTodos").doc(title);
+
+    // .doc(_titleController.toString());
+    // .doc(_titleController.toString());
+
+    // Map<String, String> todoList = {
+    //   "todoTitle": _titleController.text,
+    //   // "todoTitle": titleText,
+    //   "todoDesc": descriptionText,
+    //   "todoDate": dateValue,
+    // };
+
+    Map<String, String> todoList = {
+      "todoTitle": _titleController.text,
+      // "todoTitle": titleText,
+      "todoDesc": _descriptionController.text,
+      "todoDate": _dateController.text,
+    };
+
+    documentReference
+        .update(todoList)
+        .whenComplete(() => print("Data stored successfully $todoList"));
+
+    print('Title_is:');
+    print(todoList["todoTitle"]);
+    print(todoList["todoDesc"]);
+    print(todoList["todoDate"]);
+  }
+
+  //
+  // // #################################
+  //
   @override
   Widget build(BuildContext context) {
     print('Received_Title_is:$titleText');
@@ -53,6 +143,10 @@ class updateUserForm extends StatelessWidget {
     // var barColor2 = Color(0xff667eea);
     final style = TextStyle(fontSize: 25);
     // final style = TextStyle(fontSize: 45, fontWeight: FontWeight.bold);
+
+    _titleController.text = titleText;
+    _descriptionController.text = descriptionText;
+    _dateController.text = dateValue;
 
     return Scaffold(
       extendBodyBehindAppBar: true,
@@ -94,13 +188,21 @@ class updateUserForm extends StatelessWidget {
               ),
               TextField(
                   // controller: _titleController,
+                  controller: _titleController,
                   style: TextStyle(color: Colors.white.withOpacity(0.9)),
                   decoration: InputDecoration(
+                    // hintText: titleText,
+                    // label: Text(titleText.toString()),
+                    // labelText: titleText,
+                    // hintText: titleText,
+                    // hintText: titleText,
                     prefixIcon: const Icon(
                       Icons.title_outlined,
                       color: Colors.white70,
                     ),
-                    labelText: titleText,
+
+                    // labelText: _titleController.toString(),
+                    // labelText: titleText,
                     // labelText: 'Title',
                     labelStyle:
                         TextStyle(color: Colors.white70.withOpacity(0.9)),
@@ -124,13 +226,14 @@ class updateUserForm extends StatelessWidget {
                   // onTap: () {
                   //   print('titleText_is:${titleText}');
                   // },
+                  controller: _descriptionController,
                   style: TextStyle(color: Colors.white.withOpacity(0.9)),
                   decoration: InputDecoration(
                     prefixIcon: const Icon(
                       Icons.description_outlined,
                       color: Colors.white70,
                     ),
-                    labelText: descriptionText,
+                    // labelText: descriptionText,
                     labelStyle:
                         TextStyle(color: Colors.white70.withOpacity(0.9)),
                     filled: true,
@@ -150,14 +253,14 @@ class updateUserForm extends StatelessWidget {
                 height: 20.0,
               ),
               TextField(
-                  // controller: _dateController,
+                  controller: _dateController,
                   style: TextStyle(color: Colors.white.withOpacity(0.9)),
                   decoration: InputDecoration(
                     prefixIcon: const Icon(
                       Icons.date_range_outlined,
                       color: Colors.white70,
                     ),
-                    labelText: dateValue,
+                    // labelText: dateValue,
                     labelStyle:
                         TextStyle(color: Colors.white70.withOpacity(0.9)),
                     filled: true,
@@ -184,9 +287,25 @@ class updateUserForm extends StatelessWidget {
                         print('Update Text Button');
                       },
                       child: OutlinedButton(
+                        // onPressed: updateToDo,
                         onPressed: () {
+                          // _titleController.text = titleText;
+                          // _titleController.text = titleText;
+                          //todos.add(title);
+
+                          updateToDo();
+                          Navigator.pop(context);
+                          // _titleController.text = '';
+                          // _titleController.clear();
+                          // updateToDo();
+
                           print('Update Details');
+                          // Navigator.of(context).pop();
+                          // updateToDo();
+                          // print('Update Details');
                         },
+                        // _titleController.clear();
+
                         style: ButtonStyle(
                           shape: MaterialStateProperty.all(
                               RoundedRectangleBorder(
