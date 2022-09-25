@@ -290,7 +290,6 @@ class _updateUserFormState extends State<updateUserForm> {
                         // onPressed: updateToDo,
                         onPressed: () {
                           // _titleController.text = titleText;
-                          // _titleController.text = titleText;
                           //todos.add(title);
 
                           updateToDo();
