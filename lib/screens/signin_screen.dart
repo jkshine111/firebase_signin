@@ -66,7 +66,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 ),
 
                 // Icon(
-                //   Icons.maps_ugc_rounded,
+                //   Icons.web,
                 //   color: Colors.black26,
                 //   size: 100,
                 // ),
@@ -218,9 +218,6 @@ class _HomeStateState extends State<_HomeState> {
               hexStringToColor("9546C4"),
               hexStringToColor("5E61F4"),
               hexStringToColor("9546C4"),
-              // hexStringToColor("CB2B93"),
-              // hexStringToColor("9546C4"),
-              // hexStringToColor("5E61F4")
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -269,15 +266,6 @@ class _HomeStateState extends State<_HomeState> {
                     ' Signin ',
                     style: TextStyle(fontSize: 18, color: Colors.white70),
                   )),
-              // ElevatedButton(
-              //   // onPressed: signOut,
-              //   onPressed: () {
-              //     Navigator.push(
-              //         context,
-              //         // google sign in
-              //         MaterialPageRoute(builder: (context) => MyHomePage()));
-              //   },
-              //   child: const Text('Open Todo Page'),)
             ],
           ),
         ),
@@ -323,10 +311,6 @@ class _HomeStateState extends State<_HomeState> {
                     ),
                   ),
                   child: Text(' Signin ')),
-              // ElevatedButton(
-              //   onPressed: signIn,
-              //   child: const Text('Sign in'),
-              // )
             ],
           ),
         ),

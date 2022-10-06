@@ -32,23 +32,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
           // style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
         ),
       ),
-      // body: Container(
-      //   // width: MediaQuery.of(context),
-      // ),
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
             gradient: LinearGradient(
           colors: [
-            // hexStringToColor("CB2B693"),
             hexStringToColor("5E61F4"),
             hexStringToColor("9546C4"),
             hexStringToColor("9546C4"),
             hexStringToColor("5E61F4"),
             hexStringToColor("9546C4"),
-
-            // hexStringToColor("5E61F4"),
           ],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,

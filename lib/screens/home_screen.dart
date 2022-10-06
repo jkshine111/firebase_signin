@@ -19,7 +19,6 @@ class _HomeScreenState extends State<HomeScreen> {
           IconButton(
             icon: Icon(Icons.logout_outlined),
             onPressed: () {
-              print('Go to signin screen');
               print('Signed Out');
 
               FirebaseAuth.instance.signOut().then((value) {
@@ -34,8 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: ElevatedButton(
           child: Text('Logout'),
           onPressed: () {
-            print('Go to signin screen');
-            print('Signed Out');
+            print('Logout Button ');
 
             FirebaseAuth.instance.signOut().then((value) {
               Navigator.push(context,

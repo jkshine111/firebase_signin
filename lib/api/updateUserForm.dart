@@ -43,50 +43,13 @@ class _updateUserFormState extends State<updateUserForm> {
   // final CollectionReference _update_val =
   //     FirebaseFirestore.instance.collection('TodoList');
 
-  // TextEditingController _titleController = new TextEditingController();
   TextEditingController _titleController = new TextEditingController();
   TextEditingController _descriptionController = new TextEditingController();
   TextEditingController _dateController = new TextEditingController();
 
-  // final List<String> titleText;
-
-  // TextEditingController textEditingController =
-  //     TextEditingController(text: titleText);
-
-  // TextEditingController _titleController = new TextEditingController();
-  // TextEditingController _titleController = TextEditingController(
-  // text: dataList[index].purpose);
-
-  // _purposeController = TextEditingController(
-  // text: dataList[index].purpose);
-  // TextEditingController _descriptionController = new TextEditingController();
-  // TextEditingController _dateController = new TextEditingController();
-
   final bool _validateTitle = false;
   final bool _validateDescription = false;
   final bool _validateDate = false;
-  //
-  // var documentReference =
-  // FirebaseFirestore.instance.collection("TodoList");
-  //
-
-  // var reference_id = FirebaseFirestore.instance.collection('TodoList');
-  //
-  // // Updaing Record
-  // CollectionReference todoList =
-  //     FirebaseFirestore.instance.collection('TodoList');
-
-  // Future<void> updateval(id, titleText, descriptionText, dateValue) {
-  //   return todoList
-  //       .doc(id)
-  //       .update({
-  //         'todoTitle': _titleController.text,
-  //         'todoDesc': _descriptionController.text,
-  //         'todoDate': _dateController.text
-  //       })
-  //       .then((value) => print("Record Updated"))
-  //       .catchError((error) => print("Failed to update record: $error"));
-  // }
 
   // ################## ---------------------------
 
@@ -98,20 +61,6 @@ class _updateUserFormState extends State<updateUserForm> {
         FirebaseFirestore.instance.collection("TodoList").doc(titleText);
 
     // final reference_id = FirebaseFirestore.instance.collection("TodoList").id;
-
-    // .doc(_titleController.text);
-    // FirebaseFirestore.instance.collection("TodoList").doc(titleText);
-    // FirebaseFirestore.instance.collection("MyTodos").doc(title);
-
-    // .doc(_titleController.toString());
-    // .doc(_titleController.toString());
-
-    // Map<String, String> todoList = {
-    //   "todoTitle": _titleController.text,
-    //   // "todoTitle": titleText,
-    //   "todoDesc": descriptionText,
-    //   "todoDate": dateValue,
-    // };
 
     Map<String, String> todoList = {
       "todoTitle": _titleController.text,
@@ -138,11 +87,7 @@ class _updateUserFormState extends State<updateUserForm> {
     print('Received_Title_is:$titleText');
     print('Received_Description_is:$descriptionText');
     print('Received_Date_is:$dateValue');
-    // var barColor2 = Color(0xff4568dc);
-    // var barColor2 = Color(0xff5b86e5);
-    // var barColor2 = Color(0xff667eea);
     final style = TextStyle(fontSize: 25);
-    // final style = TextStyle(fontSize: 45, fontWeight: FontWeight.bold);
 
     _titleController.text = titleText;
     _descriptionController.text = descriptionText;
@@ -153,12 +98,10 @@ class _updateUserFormState extends State<updateUserForm> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        // backgroundColor: barColor2,
         title: Column(
           children: [
             Text(
               'Update Todo List',
-              // style: GoogleFonts.tangerine(textStyle: style),
               style: GoogleFonts.pacifico(textStyle: style),
             ),
           ],
@@ -187,23 +130,13 @@ class _updateUserFormState extends State<updateUserForm> {
                 height: 100.0,
               ),
               TextField(
-                  // controller: _titleController,
                   controller: _titleController,
                   style: TextStyle(color: Colors.white.withOpacity(0.9)),
                   decoration: InputDecoration(
-                    // hintText: titleText,
-                    // label: Text(titleText.toString()),
-                    // labelText: titleText,
-                    // hintText: titleText,
-                    // hintText: titleText,
                     prefixIcon: const Icon(
                       Icons.title_outlined,
                       color: Colors.white70,
                     ),
-
-                    // labelText: _titleController.toString(),
-                    // labelText: titleText,
-                    // labelText: 'Title',
                     labelStyle:
                         TextStyle(color: Colors.white70.withOpacity(0.9)),
                     filled: true,
@@ -216,16 +149,10 @@ class _updateUserFormState extends State<updateUserForm> {
                     errorText:
                         _validateTitle ? 'Title Value Can\'t Be Empty' : null,
                   )),
-              // reusableTextField(
-              //     "Title", Icons.title_outlined, false, _titleController),
               const SizedBox(
                 height: 20.0,
               ),
               TextField(
-                  // controller: _descriptionController,
-                  // onTap: () {
-                  //   print('titleText_is:${titleText}');
-                  // },
                   controller: _descriptionController,
                   style: TextStyle(color: Colors.white.withOpacity(0.9)),
                   decoration: InputDecoration(
@@ -233,7 +160,6 @@ class _updateUserFormState extends State<updateUserForm> {
                       Icons.description_outlined,
                       color: Colors.white70,
                     ),
-                    // labelText: descriptionText,
                     labelStyle:
                         TextStyle(color: Colors.white70.withOpacity(0.9)),
                     filled: true,
@@ -247,8 +173,6 @@ class _updateUserFormState extends State<updateUserForm> {
                         ? 'Description Value Can\'t Be Empty'
                         : null,
                   )),
-              // reusableTextField("Description", Icons.description_outlined,
-              //     false, _descriptionController),
               const SizedBox(
                 height: 20.0,
               ),
@@ -273,15 +197,12 @@ class _updateUserFormState extends State<updateUserForm> {
                     errorText:
                         _validateDate ? 'Date Value Can\'t Be Empty' : null,
                   )),
-              // reusableTextField(
-              //     "Date", Icons.date_range_outlined, false, _dateController),
               const SizedBox(
                 height: 20.0,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  // MainAxisAlignment = MainAxisAlignment.spaceBetween,
                   TextButton(
                       onPressed: () {
                         print('Update Text Button');
@@ -289,23 +210,11 @@ class _updateUserFormState extends State<updateUserForm> {
                       child: OutlinedButton(
                         // onPressed: updateToDo,
                         onPressed: () {
-                          // _titleController.text = titleText;
-                          // _titleController.text = titleText;
-                          //todos.add(title);
-
                           updateToDo();
                           Navigator.pop(context);
-                          // _titleController.text = '';
-                          // _titleController.clear();
-                          // updateToDo();
-
                           print('Update Details');
-                          // Navigator.of(context).pop();
-                          // updateToDo();
-                          // print('Update Details');
                         },
                         // _titleController.clear();
-
                         style: ButtonStyle(
                           shape: MaterialStateProperty.all(
                               RoundedRectangleBorder(

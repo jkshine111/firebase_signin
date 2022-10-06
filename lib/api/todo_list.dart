@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_signin/api/updateUserForm.dart';
-// import 'package:firebase_signin/api/update_todo_page.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -10,21 +9,8 @@ import '../screens/signin_screen.dart';
 import '../utils/color_utils.dart';
 
 class MyHomePage extends StatefulWidget {
-  // const MyHomePage(
-  //     {Key? key,
-  //     required this.title,
-  //     required this.description,
-  //     required this.date})
-  //     : super(key: key);
-
-  // final String title;
-  // final String description;
-  // final String date;
-
   @override
   State<MyHomePage> createState() => _MyHomePageState();
-
-// updateList(String title, String description, String date) {}
 }
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -32,8 +18,6 @@ class _MyHomePageState extends State<MyHomePage> {
   String description = "";
   // String date = "";
 
-  // TextEditingController _title = TextEditingController();
-  // TextEditingController _description = TextEditingController();
   TextEditingController _date = TextEditingController();
 
   // ------------------------------
@@ -200,19 +184,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                                 'Send_the_Description_is:${documentSnapshot["todoDesc"]}');
                                             print(
                                                 'Send_the_Date_is:${documentSnapshot["todoDate"]}');
-                                            // UpdateTodoPage
-                                            // Navigator.of(context).push(
-                                            //     MaterialPageRoute(
-                                            //         builder: (context) =>
-                                            //             UpdateTodoPage(
-                                            //               id: FirebaseFirestore
-                                            //                   .instance
-                                            //                   .collection(
-                                            //                       "TodoList")
-                                            //                   .id,
-                                            //             )));
-                                            // final reference_id = FirebaseFirestore.instance.collection("TodoList").id;
-                                            // },
+
                                             Navigator.of(context).push(
                                                 MaterialPageRoute(
                                                     builder: (context) =>
